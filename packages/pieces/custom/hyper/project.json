@@ -1,0 +1,43 @@
+{
+  "name": "pieces-hyper",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/pieces/custom/hyper/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/pieces/custom/hyper",
+        "tsConfig": "packages/pieces/custom/hyper/tsconfig.lib.json",
+        "packageJson": "packages/pieces/custom/hyper/package.json",
+        "main": "packages/pieces/custom/hyper/src/index.ts",
+        "assets": [
+          "packages/pieces/custom/hyper/*.md"
+        ],
+        "buildableProjectDepsInPackageJsonType": "dependencies",
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs pieces-hyper {args.ver} {args.tag}",
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/pieces/custom/hyper/**/*.ts"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

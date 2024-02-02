@@ -4,7 +4,6 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspace",
-
 	// Configure tool-specific properties.
 	"customizations": {
 		// Configure properties specific to VS Code.
@@ -21,16 +20,17 @@
 			]
 		}
 	},
-	"forwardPorts": [3000, 4200],
+	"forwardPorts": [
+		3000,
+		4200
+	],
 	"postAttachCommand": "/bin/bash .devcontainer/setup.sh",
 	"hostRequirements": {
-  	  "cpus": 4,
-  	  "memory": "8gb"
-  	},
-
+		"cpus": 8,
+		"memory": "8gb"
+	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// This can be used to network with other containers or with the host.
-
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
 	"remoteUser": "root",

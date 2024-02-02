@@ -562,6 +562,7 @@
       "@activepieces/ui/feature-templates": [
         "packages/ui/feature-templates/src/index.ts"
       ],
+      "@dohyper/activepieces": ["packages/pieces/custom/hyper/src/index.ts"],
       "@ee/*": ["packages/ee/*"],
       "ui-feature-flow-builder": [
         "packages/ui/feature-flow-builder/src/index.ts"
